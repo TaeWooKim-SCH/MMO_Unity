@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 1. ¿ßƒ° ∫§≈Õ
-// 2. πÊ«‚ ∫§≈Õ
-
 public class PlayerController: MonoBehaviour {
     [SerializeField]
     float _speed = 10.0f;
