@@ -21,8 +21,14 @@ public class CameraController : MonoBehaviour
     void LateUpdate() // 업데이트 후 실행되는 Update
     {
         if (_mode == Define.CameraMode.QuaterView) {
-            transform.position = _player.transform.position +_delta;
-            transform.LookAt(_player.transform);
+            RaycastHit hit;
+            if (Physics.Raycast(_player.transform.position, _delta, out hit, _delta.magnitude, LayerMask.GetMask("Wall"))) {
+                float dist = (hit.point - _player.transform.position).magnitude * 0.8f;
+                transform.position = _player.transform.position + _delta.normalized * dist;
+            } else {
+                transform.position = _player.transform.position +_delta;
+                transform.LookAt(_player.transform);
+            }
         }
     }
 
