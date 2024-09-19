@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class InputManager: MonoBehaviour
 {
-    public Action KeyAction = null;
+    //public Action KeyAction = null;
     public Action<Define.MouseEvent> MouseAction = null;
 
     bool _pressed = false;
 
     public void OnUpdate()
     {
-        if (Input.anyKey && KeyAction != null) {
-            KeyAction.Invoke();
-        }
+        //if (Input.anyKey && KeyAction != null) {
+        //    KeyAction.Invoke();
+        //}
 
         if (MouseAction != null) {
             if (Input.GetMouseButton(0)) {
