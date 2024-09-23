@@ -12,10 +12,6 @@ public class PlayerController: MonoBehaviour {
     void Start() {
         Managers.Input.MouseAction -= OnMouseClicked;
         Managers.Input.MouseAction += OnMouseClicked;
-
-        //Managers.Resource.Instantiate("UI/UI_Button");
-        // Temp
-        UI_Button ui = Managers.UI.ShowPopupUI<UI_Button>();
     }
 
     public enum PlayerState {
